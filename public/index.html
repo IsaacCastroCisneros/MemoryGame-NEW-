@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@300;400&family=Josefin+Sans:wght@300;500&family=Lato:wght@300;400;700&family=Open+Sans:wght@300;500;700&family=Press+Start+2P&family=Red+Hat+Mono:wght@400;700&family=Titillium+Web:wght@200;300&family=Ubuntu:ital,wght@0,500;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <script defer src="../src/conponents/main.js"></script>
+    <title>Memory Game</title>
+</head>
+
+<body>
+    <main class="main">
+        <h1 class="game-title">
+            MEMORY GAME
+        </h1>
+        <div class="game">
+            <div class="game__board" data-game-board>
+                <div class="game__container" data-game-container>
+
+                </div>
+                <div class="game__notification" data-game-notification>
+                    <img class="game__img" data-msg data-game-img src="" alt="">      
+                    <p class="game__remain" data-game-remain>
+                        
+                    </p>
+                </div>
+                <div class="game__layer" data-msg data-game-layer></div>
+                <div class="game__win-container" data-msg data-game-win-container>
+                    <div class="game__win" >
+                        <img class="game__win-img" data-game-win src="" alt="">
+                    </div>
+                    <h1 class="game__win-title" data-game-title></h1>
+                </div>
+            </div>
+            <button class="game__button" data-game-button>
+                START
+            </button>
+        </div>
+    </main>
+</body>
+
+<template data-card-template>
+    <div class="card" data-card>
+        <img class="card__img" data-card-img src="" alt="">
+        <img class="card__layer" src="" alt="" data-card-layer>
+    </div>
+</template>
+
+</html>
