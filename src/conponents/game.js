@@ -12,7 +12,7 @@ const failureImg= './dist-files/dist-images/cross.png';
 const succesImg= './dist-files/dist-images/check.png';
 const winImg = './dist-files/dist-images/elon.png';
 const loseImg = './dist-files/dist-images/akko.jpg';
-
+//xd
 export function game()
 {
     showCards();
