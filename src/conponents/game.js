@@ -12,6 +12,7 @@ const failureImg= './dist-files/dist-images/cross.png';
 const succesImg= './dist-files/dist-images/check.png';
 const winImg = './dist-files/dist-images/elon.png';
 const loseImg = './dist-files/dist-images/akko.jpg';
+const layerCardImg = './dist-files/dist-images/question.gif';
 //xd
 export function game()
 {
@@ -90,7 +91,7 @@ export function renderCards(image)
     const card = cardClone.querySelector('[data-card]');
     const cardLayer = cardClone.querySelector('[data-card-layer]');
     
-    cardLayer.src='./dist-files/dist-images/question.gif';
+    cardLayer.src=layerCardImg;
     cardImg.src=image.img;
     cardImg.draggable=false;
     cardLayer.draggable=false;
