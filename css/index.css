@@ -36,6 +36,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.image-loader {
+  display: none;
+}
+
 .main {
   padding: 0 1rem;
 }
@@ -152,7 +156,8 @@ body {
 }
 .game__win-img {
   position: absolute;
-  transform: translate(-11rem, -1.5rem);
+  transform: translate(-9.2rem, -1.5rem);
+  height: 120%;
   top: 0;
 }
 .game__win-img.lose {
