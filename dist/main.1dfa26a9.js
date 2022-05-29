@@ -310,7 +310,7 @@ function game() {
               msgs.forEach(function (msg) {
                 msg.style.removeProperty('display');
               });
-              msgs[2].classList.remove('show');
+              msgs[3].classList.remove('show');
 
               _toConsumableArray(cards).forEach(function (card) {
                 card.dataset.hide = true;
@@ -408,16 +408,24 @@ function _showNotification() {
   return _showNotification.apply(this, arguments);
 }
 
-function gameOver(img, text) {
+function gameOver(bool, text) {
   var gameOverContainer = document.querySelector('[data-game-win-container]');
-  var gameOverMsg = document.querySelector('[data-game-win]');
+  var gameOverWinMsg = document.querySelector('[data-game-win]');
+  var gameOverLoseMsg = document.querySelector('[data-game-lose]');
   var gameOverTitle = document.querySelector('[data-game-title]');
   var layer = document.querySelector('[data-game-layer]');
-  gameOverMsg.src = img;
+
+  if (bool) {
+    gameOverLoseMsg.classList.remove('lose');
+    gameOverWinMsg.classList.add('win');
+  } else {
+    gameOverWinMsg.classList.remove('win');
+    gameOverLoseMsg.classList.add('lose');
+  }
+
   gameOverTitle.textContent = text;
   layer.classList.add('show');
   gameOverContainer.classList.add('show');
-  return gameOverMsg;
 }
 
 function compareCards(_x3) {
@@ -461,7 +469,7 @@ function _compareCards() {
               break;
             }
 
-            gameOver(winImg, 'WIN').classList.remove('lose');
+            gameOver(true, 'WIN');
             return _context3.abrupt("return");
 
           case 11:
@@ -483,7 +491,7 @@ function _compareCards() {
               break;
             }
 
-            gameOver(loseImg, 'LOSE').classList.add('lose');
+            gameOver(false, 'LOSE');
             return _context3.abrupt("return");
 
           case 20:
@@ -571,7 +579,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54643" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56562" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

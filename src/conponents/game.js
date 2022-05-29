@@ -69,7 +69,7 @@ export function game()
            msg.style.removeProperty('display');
         });
         
-        msgs[2].classList.remove('show');
+        msgs[3].classList.remove('show');
     
         [...cards].forEach(card=>
         {
@@ -150,19 +150,29 @@ async function showNotification(bool)
     
 }
 
-function gameOver(img,text)
+function gameOver(bool,text)
 {
     const gameOverContainer = document.querySelector('[data-game-win-container]');
-    const gameOverMsg = document.querySelector('[data-game-win]');
+    const gameOverWinMsg = document.querySelector('[data-game-win]');
+    const gameOverLoseMsg = document.querySelector('[data-game-lose]');
     const gameOverTitle = document.querySelector('[data-game-title]');
     const layer = document.querySelector('[data-game-layer]');
   
-    gameOverMsg.src=img;
+    if(bool)
+    {
+        gameOverLoseMsg.classList.remove('lose');
+        gameOverWinMsg.classList.add('win');
+    }
+    else
+    {
+        gameOverWinMsg.classList.remove('win');
+        gameOverLoseMsg.classList.add('lose');
+    }
+
     gameOverTitle.textContent=text;
 
     layer.classList.add('show');
     gameOverContainer.classList.add('show');
-    return gameOverMsg
 }
 
 async function compareCards(card)
@@ -183,7 +193,7 @@ async function compareCards(card)
         })
         if(images.length===sameCards)
         {
-            gameOver(winImg,'WIN').classList.remove('lose');
+            gameOver(true,'WIN')
             return
         }
 
@@ -195,7 +205,7 @@ async function compareCards(card)
         tries--;
         if(tries<0)
         {
-            gameOver(loseImg,'LOSE').classList.add('lose')
+            gameOver(false,'LOSE')
             return
         }
 

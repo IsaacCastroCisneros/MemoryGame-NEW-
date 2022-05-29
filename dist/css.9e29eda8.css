@@ -155,12 +155,17 @@ body {
   overflow: hidden;
 }
 .game__win-img {
+  display: none;
   position: absolute;
-  transform: translate(-9.2rem, -1.5rem);
-  height: 120%;
   top: 0;
 }
+.game__win-img.win {
+  display: block;
+  transform: translate(-9.2rem, -1.5rem);
+  height: 120%;
+}
 .game__win-img.lose {
+  display: block;
   transform: translate(-0.3rem, 0rem);
   height: 105%;
 }

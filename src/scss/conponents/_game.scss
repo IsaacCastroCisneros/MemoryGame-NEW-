@@ -139,12 +139,19 @@
         overflow: hidden;
         &-img
         {
+            display: none;
             position: absolute;
-            transform: translate(-9.2rem, -1.5rem);
-            height: 120%;
-            top: 0;
+            top: 0;                     
+            &.win
+            {   
+                display: block;
+                transform: translate(-9.2rem, -1.5rem);
+                height: 120%;
+            }
             &.lose
             {
+                display: block;
+
                 transform: translate(-.3rem, 0rem);
                 height: 105%;
             }
