@@ -8,10 +8,6 @@ let cardsSelected =[];
 let sameCards = 0;
 let tries = 6;
 
-const failureImg= './dist-files/dist-images/cross.png';
-const succesImg= './dist-files/dist-images/check.png';
-const winImg = './dist-files/dist-images/elon.png';
-const loseImg = './dist-files/dist-images/akko.jpg';
 const layerCardImg = './dist-files/dist-images/question.gif';
 //xd
 export function game()
