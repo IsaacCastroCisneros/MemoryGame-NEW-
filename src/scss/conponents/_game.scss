@@ -1,5 +1,10 @@
 @use '../util/extends';
 
+.image-loader
+{
+    display: none;
+}
+
 .main
 {
     padding: 0 1rem;

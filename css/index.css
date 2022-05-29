@@ -36,6 +36,10 @@ body {
   font-family: "Ubuntu", sans-serif;
 }
 
+.image-loader {
+  display: none;
+}
+
 .main {
   padding: 0 1rem;
 }
