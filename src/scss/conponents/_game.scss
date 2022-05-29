@@ -79,6 +79,11 @@
     &__img
     {
         width: 50%;
+        display: none;
+        &.show
+        {
+            display: block;
+        }
     }
     &__remain
     {

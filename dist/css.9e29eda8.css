@@ -103,6 +103,10 @@ body {
 }
 .game__img {
   width: 50%;
+  display: none;
+}
+.game__img.show {
+  display: block;
 }
 .game__remain {
   background-color: #054861;

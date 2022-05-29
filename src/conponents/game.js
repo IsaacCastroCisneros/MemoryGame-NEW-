@@ -119,29 +119,37 @@ export function areHide()
     })
 }
 
-async function showNotification(img,text)
+async function showNotification(bool)
 {
     const notification = document.querySelector('[data-game-notification]');
-    const notificationImg = document.querySelector('[data-game-img]');
+    const check = document.querySelector('[data-game-check]');
+    const cross = document.querySelector('[data-game-cross]');
     const notificationRemain = document.querySelector('[data-game-remain]');
     const layer = document.querySelector('[data-game-layer]');
-  
-    notificationImg.src=img;
 
-    if(text)
+    if(bool)
     {
-        notificationRemain.textContent=text;    
+        cross.classList.remove('show');
+        check.classList.add('show');
+        notificationRemain.textContent='COOL';    
     }
     else
     {
+        check.classList.remove('show');
+        cross.classList.add('show');
         notificationRemain.textContent='Remain: '+tries;
     }
     
-    layer.classList.add('show');
-    notification.classList.add('show');
+    notification.classList.add('show'); 
+    layer.classList.add('show')
+
     await setDelay(500);
+
     notification.classList.remove('show');
     layer.classList.remove('show');
+    
+   /*  layer.classList.add('show');
+    notification.classList.add('show'); */
 }
 
 function gameOver(img,text)
@@ -181,7 +189,7 @@ async function compareCards(card)
             return
         }
 
-        showNotification(succesImg,'COOL');
+        showNotification(true);
         cardsSelected=[];   
     }
     else if(!areSame)
@@ -193,7 +201,7 @@ async function compareCards(card)
             return
         }
 
-        showNotification(failureImg)
+        showNotification(false)
         cardsSelected.forEach(card=>
         {
             card.dataset.hide=true;

@@ -362,37 +362,43 @@ function areHide() {
   });
 }
 
-function showNotification(_x2, _x3) {
+function showNotification(_x2) {
   return _showNotification.apply(this, arguments);
 }
 
 function _showNotification() {
-  _showNotification = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(img, text) {
-    var notification, notificationImg, notificationRemain, layer;
+  _showNotification = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(bool) {
+    var notification, check, cross, notificationRemain, layer;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
             notification = document.querySelector('[data-game-notification]');
-            notificationImg = document.querySelector('[data-game-img]');
+            check = document.querySelector('[data-game-check]');
+            cross = document.querySelector('[data-game-cross]');
             notificationRemain = document.querySelector('[data-game-remain]');
             layer = document.querySelector('[data-game-layer]');
-            notificationImg.src = img;
 
-            if (text) {
-              notificationRemain.textContent = text;
+            if (bool) {
+              cross.classList.remove('show');
+              check.classList.add('show');
+              notificationRemain.textContent = 'COOL';
             } else {
+              check.classList.remove('show');
+              cross.classList.add('show');
               notificationRemain.textContent = 'Remain: ' + tries;
             }
 
-            layer.classList.add('show');
             notification.classList.add('show');
+            layer.classList.add('show');
             _context2.next = 10;
             return (0, _delay.default)(500);
 
           case 10:
             notification.classList.remove('show');
             layer.classList.remove('show');
+            /*  layer.classList.add('show');
+             notification.classList.add('show'); */
 
           case 12:
           case "end":
@@ -416,7 +422,7 @@ function gameOver(img, text) {
   return gameOverMsg;
 }
 
-function compareCards(_x4) {
+function compareCards(_x3) {
   return _compareCards.apply(this, arguments);
 }
 
@@ -461,7 +467,7 @@ function _compareCards() {
             return _context3.abrupt("return");
 
           case 11:
-            showNotification(succesImg, 'COOL');
+            showNotification(true);
             cardsSelected = [];
             _context3.next = 24;
             break;
@@ -483,7 +489,7 @@ function _compareCards() {
             return _context3.abrupt("return");
 
           case 20:
-            showNotification(failureImg);
+            showNotification(false);
             cardsSelected.forEach(function (card) {
               card.dataset.hide = true;
             });
@@ -567,7 +573,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57139" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53495" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
