@@ -1,5 +1,10 @@
 @use '../util/extends';
 
+.main
+{
+    padding: 0 1rem;
+}
+
 .game-title
 {
     display: block;
@@ -7,6 +12,7 @@
     color: #fff;
     margin-top: 2rem
 }
+
 .game
 {
     @extend .flex;
@@ -14,7 +20,6 @@
     margin: 2rem auto 0 auto;
     background-color: #151a1e;
     width: 33rem;
-    height: 37rem;
     padding: 2.8rem;
     border-radius: .5rem;
 
@@ -22,15 +27,16 @@
     {
         position: relative;
         width: 100%;
-        height: 25rem;
         padding: 1rem;
         background-color: #070b0d;
         border-radius: .5rem;
     }
     &__container
     {
-        @extend .flex;
-        flex-wrap: wrap;
+      /*   @extend .flex;
+        flex-wrap: wrap; */
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(20%,1fr));
         gap: 1rem;
         width: 100%;
         height: 100%;
@@ -145,9 +151,9 @@
 }
 .card
 {
-    flex: 20%;
+  /*   flex: 20%; */
     cursor: pointer;
-    height: 5rem;
+    /* height: 5rem; */
     position: relative;
     
     &__img
@@ -178,3 +184,12 @@
         display: block;
     }
 }
+
+@media only screen and (max-width:630px) 
+{
+    .game
+    {
+        width: 100%;
+    }
+}
+
