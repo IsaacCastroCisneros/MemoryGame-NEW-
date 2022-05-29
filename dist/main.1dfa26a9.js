@@ -397,8 +397,6 @@ function _showNotification() {
           case 10:
             notification.classList.remove('show');
             layer.classList.remove('show');
-            /*  layer.classList.add('show');
-             notification.classList.add('show'); */
 
           case 12:
           case "end":
@@ -573,11 +571,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-<<<<<<< HEAD
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53652" + '/');
-=======
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57887" + '/');
->>>>>>> 423f9df847fd038d0e0b3e7c594539e2de67f380
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54643" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

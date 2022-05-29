@@ -148,8 +148,6 @@ async function showNotification(bool)
     notification.classList.remove('show');
     layer.classList.remove('show');
     
-   /*  layer.classList.add('show');
-    notification.classList.add('show'); */
 }
 
 function gameOver(img,text)
